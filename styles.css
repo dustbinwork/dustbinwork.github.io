@@ -13,8 +13,6 @@ body {
 .main, .thanks {
   border-radius: 20px;
   box-shadow: 0 5px 24px 0 rgba(0, 10, 26, 0.3);
-  background-position: right top;
-  background-size: 70%;
   background-repeat: no-repeat;
   height: 725px;
   position: relative;
@@ -22,10 +20,26 @@ body {
 .main{
   background-color: #000a1a;
   background-image: url("illustration.png");
+  background-position: right top;
+  background-size: 70%;
 }
 .thanks{
-  background-color: #000a1a;
-  background-image: url("illustration.png");
+  background-color: #FA3F69;
+  background-image: url("thankyou.png");
+  background-position: right top;
+  background-size: 100%;
+  display: none;
+}
+.thanks-text{
+  font-size: 2.5rem;
+  position: absolute;
+  top:45%;
+  left: 8vw;
+  color: #fff;
+  font-weight: 600;
+}
+.thanks .first{
+  font-size: 1.5rem;
 }
 .second {
   margin-bottom: 2vh;
@@ -44,7 +58,7 @@ body {
   top: 5vh;
   left: 5vh;
 }
-#notValid{
+#notValid, #error{
   color: red;
   display: none;
   margin-top: 10px;
@@ -95,6 +109,20 @@ body {
   position: absolute;
   left: 4.5vh;
   bottom: 38vh;
+}
+.thanks .oval1{
+  background-color: #1d6da1;
+}
+.thanks .oval2{
+  background-color: #1d6da1;
+  box-shadow: 0 15px 25px 0 rgba(32, 41, 55, 0.2);
+}
+.thanks .oval3{
+  background-color: #ffb27a;
+  box-shadow: 0 15px 25px 0 rgba(237, 177, 116, 0.2);
+}
+.thanks .oval4{
+  background-color: #ff1218;
 }
 .btn1 {
   background-color: #edb174;

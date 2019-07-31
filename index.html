@@ -8,7 +8,7 @@
 
 <body>
   <div class="container">
-    <div class="main">
+    <div class="main" id="section-1">
       <img src="logo.png" class="logo">
       <!-- <img src="illustration.png" style="visibility: hidden;  width: 100%; height: auto;"> -->
       <div class="text">
@@ -27,13 +27,32 @@
       <div class="oval3"></div>
       <div class="oval4"></div>
     </div>
+    <div class="thanks" id="thanks">
+      <img src="logo.png" class="logo">
+      <div class="thanks-text">
+        Thanks!
+      </div>
+      <div class="text">
+        <div class="first">
+          <i>Check your Email</i>
+        </div>
+        <div class="second">
+          Will see you very very soon...
+        </div>
+      </div>
+      <div class="oval1"></div>
+      <div class="oval2"></div>
+      <div class="oval3"></div>
+      <div class="oval4"></div>
+    </div>
     <div class="section-2" id="section-2">
       <img src="less.png">
       <div class="content">
         From proposal to payment: A proactive app to give you more time to do what you love
       </div>
       <div>
-        <input type="textbox" id="email" class="txtbox" placeholder="Your email address for an early invite" onkeypress="keyPerss(event)">
+        <input type="textbox" id="email" class="txtbox" placeholder="Your email address for an early invite"
+          onkeypress="keyPerss(event)">
       </div>
       <div>
         <button class="btn-invite" onClick="save()">RECEIVE INVITE</button>
@@ -41,10 +60,10 @@
       <div id="notValid">
         Email Id Not Valid
       </div>
+      <div id="error">
+        Something went wrong, Please try again later.
+      </div>
     </div>
-    <!-- <div class="thanks">
-
-    </div> -->
     <script type="text/javascript" src="Typewriter.js"></script>
     <script>
       var demo = document.getElementById('demo');
@@ -79,15 +98,15 @@
       firebase.initializeApp(firebaseConfig);
     </script>
     <script>
-      function keyPerss(event){
+      function keyPerss(event) {
         var x = event.which || event.keyCode;
-        if(x == 13){
+        if (x == 13) {
           save();
         }
       }
       function save() {
         email = document.getElementById('email').value;
-        if(validateEmail(email)){
+        if (validateEmail(email)) {
           writeUserData(email);
         }
       }
@@ -110,9 +129,13 @@
           email: email
         }, function (error) {
           if (error) {
-            console.log(error);
+            document.getElementById('error').style.display = 'block';
           } else {
             console.log("submitted");
+            document.getElementById('error').style.display = 'none';
+            document.getElementById('section-1').style.display = 'none';
+            document.getElementById('section-2').style.display = 'none';
+            document.getElementById('thanks').style.display = 'block';
           }
         })
       }
