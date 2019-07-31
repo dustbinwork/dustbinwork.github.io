@@ -13,7 +13,7 @@
       <!-- <img src="illustration.png" style="visibility: hidden;  width: 100%; height: auto;"> -->
       <div class="text">
         <div class="first">
-          If you hate <span class="bold">Paperwork</span>,
+          If you hate <span class="bold" id="demo">Paperwork</span>,
         </div>
         <div class="second">
           You will love <span class="bold">Dustbin</span>
@@ -33,12 +33,90 @@
         From proposal to payment: A proactive app to give you more time to do what you love
       </div>
       <div>
-        <input type="textbox" class="txtbox" placeholder="Your email address for an early invite">
+        <input type="textbox" id="email" class="txtbox" placeholder="Your email address for an early invite" onkeypress="keyPerss(event)">
       </div>
       <div>
-        <button class="btn-invite">RECEIVE INVITE</button>
+        <button class="btn-invite" onClick="save()">RECEIVE INVITE</button>
+      </div>
+      <div id="notValid">
+        Email Id Not Valid
       </div>
     </div>
+    <!-- <div class="thanks">
+
+    </div> -->
+    <script type="text/javascript" src="Typewriter.js"></script>
+    <script>
+      var demo = document.getElementById('demo');
+      var typewriter = new Typewriter(demo, {
+        strings: ['Paperwork', 'Tracking expenses', 'Writing invoices', 'Admin work', 'getting paid late'],
+        delay: 'natural',
+        loop: true,
+        autoStart: true,
+      });
+      typewriter.start()
+    </script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDReI8odN5Cff3uW_NMyAMjInyEQqDT5eo",
+        authDomain: "dustbin-work-6673c.firebaseapp.com",
+        databaseURL: "https://dustbin-work-6673c.firebaseio.com",
+        projectId: "dustbin-work-6673c",
+        storageBucket: "",
+        messagingSenderId: "284870385360",
+        appId: "1:284870385360:web:b399d6db6dcbdabb"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script>
+      function keyPerss(event){
+        var x = event.which || event.keyCode;
+        if(x == 13){
+          save();
+        }
+      }
+      function save() {
+        email = document.getElementById('email').value;
+        if(validateEmail(email)){
+          writeUserData(email);
+        }
+      }
+      function validateEmail(emailField) {
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        if (reg.test(emailField) == false || emailField == '') {
+          document.getElementById('notValid').style.display = 'block';
+          console.log("false");
+          return false;
+        }
+        document.getElementById('notValid').style.display = 'none';
+        console.log("true;");
+        return true;
+      }
+
+      var database = firebase.database();
+      function writeUserData(email) {
+        console.log("email", email);
+        firebase.database().ref('inviteUser').push({
+          email: email
+        }, function (error) {
+          if (error) {
+            console.log(error);
+          } else {
+            console.log("submitted");
+          }
+        })
+      }
+    </script>
   </div>
 </body>
 

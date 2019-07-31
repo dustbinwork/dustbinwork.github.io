@@ -10,16 +10,22 @@ body {
 .container {
   padding: 3vw;
 }
-.main {
+.main, .thanks {
   border-radius: 20px;
   box-shadow: 0 5px 24px 0 rgba(0, 10, 26, 0.3);
-  background-color: #000a1a;
-  background-image: url("illustration.png");
   background-position: right top;
   background-size: 70%;
   background-repeat: no-repeat;
   height: 725px;
   position: relative;
+}
+.main{
+  background-color: #000a1a;
+  background-image: url("illustration.png");
+}
+.thanks{
+  background-color: #000a1a;
+  background-image: url("illustration.png");
 }
 .second {
   margin-bottom: 2vh;
@@ -37,6 +43,12 @@ body {
   position: absolute;
   top: 5vh;
   left: 5vh;
+}
+#notValid{
+  color: red;
+  display: none;
+  margin-top: 10px;
+  font-size: 13px;
 }
 .text {
   color: #fff;
