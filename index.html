@@ -55,7 +55,10 @@
           onkeypress="keyPerss(event)">
       </div>
       <div>
-        <button class="btn-invite" onClick="save()">RECEIVE INVITE</button>
+        <button class="btn-invite" onClick="save()">
+          RECEIVE INVITE
+          <div class="spinner" id="spinner"></div>
+        </button>
       </div>
       <div id="notValid">
         Email Id Not Valid
@@ -128,11 +131,13 @@
       var database = firebase.database();
       function writeUserData(email) {
         console.log("email", email);
+        document.getElementById('spinner').style.display = 'block';
         firebase.database().ref('inviteUser').push({
           email: email
         }, function (error) {
           if (error) {
             document.getElementById('error').style.display = 'block';
+            document.getElementById('spinner').style.display = 'none';
           } else {
             console.log("submitted");
             document.getElementById('error').style.display = 'none';
@@ -140,6 +145,7 @@
             document.getElementById('section-2').style.display = 'none';
             document.getElementById('thanks').style.display = 'block';
             document.getElementById('footer').style.display = 'none';
+            document.getElementById('spinner').style.display = 'none';
           }
         })
       }

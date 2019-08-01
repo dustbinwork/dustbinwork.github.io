@@ -186,11 +186,35 @@ button.btn-invite {
   letter-spacing: 1px;
   outline: none;
   cursor: pointer;
+  position: relative;
 }
 .footer-logo{
   font-size: 1.2rem;
   margin-left: 5vw;
   margin-bottom: 50px;
+}
+.spinner {
+  width: 15px;
+  height: 15px;
+  border-radius: 32px;
+  box-sizing: border-box;
+  border: 3px groove white;
+  position: absolute;
+  right: 8%;
+  top: 25px;
+  margin:-16px 0px 0px -16px;
+  border-top-color:rgba(255,255,255,1);
+  border-left-color:rgba(255,255,255,0.9);
+  border-bottom-color:rgba(255,255,255,0.8);
+  border-right-color:rgba(255,255,255,0.7);
+  animation: rotate 1000ms infinite linear;
+  transform:translateZ(0px);
+  display: none;
+}
+
+@keyframes rotate {  
+  0% {transform:rotate(0deg);}
+  100% {transform:rotate(360deg);} 
 }
 /******** Responsive Styles *********/
 @media only screen and (max-width: 767px){
@@ -231,3 +255,5 @@ button.btn-invite {
   }
 }
 /******** END Responsive Styles *********/
+
+
