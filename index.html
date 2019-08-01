@@ -9,9 +9,9 @@
 <body>
   <div class="container">
     <div class="main" id="section-1">
-      <img src="logo.png" class="logo">
+      <img src="logo.png" class="logo rellax" data-rellax-speed="1">
       <!-- <img src="illustration.png" style="visibility: hidden;  width: 100%; height: auto;"> -->
-      <div class="text">
+      <div class="text rellax" data-rellax-speed="0.5">
         <div class="first">
           If you hate <span class="bold" id="demo">Paperwork</span>,
         </div>
@@ -22,10 +22,10 @@
           Receive Invite
         </a>
       </div>
-      <div class="oval1"></div>
-      <div class="oval2"></div>
-      <div class="oval3"></div>
-      <div class="oval4"></div>
+      <div class="oval1 rellax" data-rellax-speed="1"></div>
+      <div class="oval2 rellax"></div>
+      <div class="oval3 rellax"></div>
+      <div class="oval4 rellax"></div>
     </div>
     <div class="thanks" id="thanks">
       <img src="logo.png" class="logo">
@@ -46,7 +46,7 @@
       <div class="oval4"></div>
     </div>
     <div class="section-2" id="section-2">
-      <img src="less.png">
+      <img src="less.png" class="rellax"  data-rellax-speed="0.5">
       <div class="content">
         From proposal to payment: A proactive app to give you more time to do what you love
       </div>
@@ -63,6 +63,9 @@
       <div id="error">
         Something went wrong, Please try again later.
       </div>
+    </div>
+    <div class="footer-logo"id="footer">
+      d.
     </div>
     <script type="text/javascript" src="Typewriter.js"></script>
     <script>
@@ -136,9 +139,14 @@
             document.getElementById('section-1').style.display = 'none';
             document.getElementById('section-2').style.display = 'none';
             document.getElementById('thanks').style.display = 'block';
+            document.getElementById('footer').style.display = 'none';
           }
         })
       }
+    </script>
+    <script src="rellax.min.js"></script>
+    <script>
+      var rellax = new Rellax('.rellax');
     </script>
   </div>
 </body>
