@@ -10,23 +10,37 @@
 <body>
   <div class="container">
     <div class="main" id="section-1">
-      <img src="logo.png" class="logo rellax" data-rellax-speed="1">
+      <div id="background">
+        <div class="background" data-depth="0.1"></div>
+      </div>
+      <div class="logo-parent" id="logo">
+        <img src="logo.png" data-depth="2">
+      </div>
       <!-- <img src="illustration.png" style="visibility: hidden;  width: 100%; height: auto;"> -->
-      <div class="text rellax" data-rellax-speed="0.5">
+      <div class="text">
         <div class="first">
           If you hate <span class="bold" id="demo">Paperwork</span>,
         </div>
         <div class="second">
           You will love <span class="bold">Dustbin</span>
         </div>
+        
         <a href="#section-2" class="btn1">
           Receive Invite
         </a>
       </div>
-      <div class="oval1 rellax" data-rellax-speed="1"></div>
-      <div class="oval2 rellax"></div>
-      <div class="oval3 rellax"></div>
-      <div class="oval4 rellax"></div>
+      <div id="oval1" class="oval1-parent">
+        <div class="oval1" data-depth="1"></div>
+      </div>
+      <div id="oval2" class="oval2-parent">
+        <div class="oval2" data-depth="4"></div>
+      </div>
+      <div id="oval3" class="oval3-parent">
+        <div class="oval3" data-depth="3"></div>
+      </div>
+      <div id="oval4" class="oval4-parent">
+        <div class="oval4" data-depth="5"></div>
+      </div>
     </div>
     <div class="thanks" id="thanks">
       <img src="logo.png" class="logo">
@@ -47,7 +61,7 @@
       <div class="oval4"></div>
     </div>
     <div class="section-2" id="section-2">
-      <img src="less.png" class="rellax"  data-rellax-speed="0.5">
+      <img src="less.png">
       <div class="content">
         From proposal to payment: A proactive app to give you more time to do what you love
       </div>
@@ -68,7 +82,7 @@
         Something went wrong, Please try again later.
       </div>
     </div>
-    <div class="footer-logo"id="footer">
+    <div class="footer-logo" id="footer">
       d.
     </div>
     <script type="text/javascript" src="Typewriter.js"></script>
@@ -81,6 +95,14 @@
         autoStart: true,
       });
       typewriter.start()
+    </script>
+    <script type="text/javascript" src="parallax.min.js"></script>
+    <script>
+      new Parallax(document.getElementById('background'));
+      new Parallax(document.getElementById('oval1'));
+      new Parallax(document.getElementById('oval2'));
+      new Parallax(document.getElementById('oval3'));
+      new Parallax(document.getElementById('oval4'));
     </script>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -151,10 +173,6 @@
           }
         })
       }
-    </script>
-    <script src="rellax.min.js"></script>
-    <script>
-      var rellax = new Rellax('.rellax');
     </script>
   </div>
 </body>
