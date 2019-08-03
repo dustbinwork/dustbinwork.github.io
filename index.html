@@ -7,7 +7,14 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body onload="pageLoaded()">
+  <div class="loading">
+    <div class="loader">
+      <div class="animated infinite bounce">
+        dustbin.
+      </div>
+    </div>
+  </div>
   <div class="container">
     <div class="main" id="section-1" >
       <div id="background">
@@ -100,6 +107,9 @@
     </div>
     <script type="text/javascript" src="Typewriter.js"></script>
     <script>
+      function pageLoaded(){
+        document.querySelector('.loading').classList.add('hide');
+      }
       var demo = document.getElementById('demo');
       var typewriter = new Typewriter(demo, {
         strings: ['Paperwork', 'Tracking expenses', 'Writing invoices', 'Admin work', 'getting paid late'],
