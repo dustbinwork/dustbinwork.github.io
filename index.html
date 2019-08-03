@@ -9,12 +9,12 @@
 
 <body>
   <div class="container">
-    <div class="main" id="section-1">
+    <div class="main" id="section-1" style="display: none;">
       <div id="background">
         <div class="background" data-depth="0.1"></div>
       </div>
       <div class="logo-parent" id="logo">
-        <img src="logo.png" data-depth="2">
+        <img src="logo.png" data-depth="1">
       </div>
       <!-- <img src="illustration.png" style="visibility: hidden;  width: 100%; height: auto;"> -->
       <div class="text">
@@ -24,7 +24,7 @@
         <div class="second">
           You will love <span class="bold">Dustbin</span>
         </div>
-        
+
         <a href="#section-2" class="btn1">
           Receive Invite
         </a>
@@ -42,8 +42,13 @@
         <div class="oval4" data-depth="5"></div>
       </div>
     </div>
-    <div class="thanks" id="thanks">
-      <img src="logo.png" class="logo">
+    <div class="thanks" id="thanks" style="display: block; opacity: 1;">
+      <div id="thanksbackground">
+        <div class="thanksbackground" data-depth="0.1"></div>
+      </div>
+      <div class="logo-parent" id="logo-thanks">
+        <img src="logo.png" data-depth="1">
+      </div>
       <div class="thanks-text">
         Thanks!
       </div>
@@ -55,10 +60,18 @@
           Will see you very very soon...
         </div>
       </div>
-      <div class="oval1"></div>
-      <div class="oval2"></div>
-      <div class="oval3"></div>
-      <div class="oval4"></div>
+      <div id="thanksoval1" class="oval1-parent">
+        <div class="oval1" data-depth="1"></div>
+      </div>
+      <div id="thanksoval2" class="oval2-parent">
+        <div class="oval2" data-depth="4"></div>
+      </div>
+      <div id="thanksoval3" class="oval3-parent">
+        <div class="oval3" data-depth="3"></div>
+      </div>
+      <div id="thanksoval4" class="oval4-parent">
+        <div class="oval4" data-depth="5"></div>
+      </div>
     </div>
     <div class="section-2" id="section-2">
       <img src="less.png">
@@ -99,10 +112,18 @@
     <script type="text/javascript" src="parallax.min.js"></script>
     <script>
       new Parallax(document.getElementById('background'));
+      new Parallax(document.getElementById('logo'));
       new Parallax(document.getElementById('oval1'));
       new Parallax(document.getElementById('oval2'));
       new Parallax(document.getElementById('oval3'));
       new Parallax(document.getElementById('oval4'));
+
+      new Parallax(document.getElementById('thanksbackground'));
+      new Parallax(document.getElementById('logo-thanks'));
+      new Parallax(document.getElementById('thanksoval1'));
+      new Parallax(document.getElementById('thanksoval2'));
+      new Parallax(document.getElementById('thanksoval3'));
+      new Parallax(document.getElementById('thanksoval4'));
     </script>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -164,15 +185,19 @@
           } else {
             console.log("submitted");
             document.getElementById('error').style.display = 'none';
-            document.getElementById('section-1').style.display = 'none';
-            document.getElementById('section-2').style.display = 'none';
             document.getElementById('thanks').style.display = 'block';
             document.getElementById('footer').style.display = 'none';
             document.getElementById('spinner').style.display = 'none';
-            document.getElementById('thanks').classList.add('thanks-animate');
+            scrollTo(0, 0)
+            setTimeout(() => {
+              document.getElementById('section-1').style.display = 'none';
+              document.getElementById('section-2').style.display = 'none';
+              document.getElementById('thanks').classList.add('thanks-animate');
+            }, 600);
           }
         })
       }
+
     </script>
   </div>
 </body>

@@ -25,14 +25,22 @@ body {
   height: 85vh;
   position: relative;
   box-shadow: 0 5px 24px 0 rgba(0, 10, 26, 0.3);
+  border-radius: 20px;
 }
 .thanks {
+  display: none;
+  opacity: 0;
+}
+.thanksbackground {
   background-color: #fa3f69;
   background-image: url("thankyou.png");
   background-position: right top;
   background-size: 100%;
-  display: none;
-  opacity: 0;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 85vh;
+  box-shadow: 0 5px 24px 0 rgba(0, 10, 26, 0.3);
+  border-radius: 20px;
 }
 .pr{
   position: relative;
@@ -57,10 +65,11 @@ body {
 .thanks-text {
   font-size: 2.5rem;
   position: absolute;
-  top: 45vh;
+  top: 34vh;
   left: 8vw;
   color: #fff;
   font-weight: 600;
+  border-bottom: 2px solid #1d6da1;
 }
 .thanks .first {
   font-size: 1.5rem;
