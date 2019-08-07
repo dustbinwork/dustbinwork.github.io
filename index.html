@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L7JCL3QVME"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-L7JCL3QVME');
+  </script>
+
 </head>
 
 <body onload="pageLoaded()">
@@ -16,7 +26,7 @@
     </div>
   </div>
   <div class="container">
-    <div class="main" id="section-1" >
+    <div class="main" id="section-1">
       <div id="background">
         <div class="background" data-depth="0.1"></div>
       </div>
@@ -107,7 +117,7 @@
     </div>
     <script type="text/javascript" src="Typewriter.js"></script>
     <script>
-      function pageLoaded(){
+      function pageLoaded() {
         document.querySelector('.loading').classList.add('hide');
       }
       var demo = document.getElementById('demo');
