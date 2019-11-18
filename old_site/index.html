@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Dustbin.work</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L7JCL3QVME"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-L7JCL3QVME');
+  </script>
+
+</head>
+
+<body onload="pageLoaded()">
+  <div class="loading">
+    <div class="loader">
+      <div class="animated infinite bounce">
+        dustbin.
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="main" id="section-1">
+      <div id="background">
+        <div class="background" data-depth="0.1"></div>
+      </div>
+      <div class="logo-parent" id="logo">
+        <img src="logo.png" data-depth="1">
+      </div>
+      <!-- <img src="illustration.png" style="visibility: hidden;  width: 100%; height: auto;"> -->
+      <div class="text">
+        <div class="first">
+          If you hate <span class="bold" id="demo">Paperwork</span>,
+        </div>
+        <div class="second">
+          You will love <span class="bold">Dustbin</span>
+        </div>
+
+        <a href="#section-2" class="btn1">
+          Receive Invite
+        </a>
+      </div>
+      <div id="oval1" class="oval1-parent">
+        <div class="oval1" data-depth="1"></div>
+      </div>
+      <div id="oval2" class="oval2-parent">
+        <div class="oval2" data-depth="4"></div>
+      </div>
+      <div id="oval3" class="oval3-parent">
+        <div class="oval3" data-depth="3"></div>
+      </div>
+      <div id="oval4" class="oval4-parent">
+        <div class="oval4" data-depth="5"></div>
+      </div>
+    </div>
+    <div class="thanks" id="thanks">
+      <div id="thanksbackground">
+        <div class="thanksbackground" data-depth="0.1"></div>
+      </div>
+      <div class="logo-parent" id="logo-thanks">
+        <img src="logo.png" data-depth="1">
+      </div>
+      <div class="thanks-text">
+        Thanks!
+      </div>
+      <div class="text">
+        <div class="first">
+          <i>Check your Email</i>
+        </div>
+        <div class="second">
+          Will see you very very soon...
+        </div>
+      </div>
+      <div id="thanksoval1" class="oval1-parent">
+        <div class="oval1" data-depth="1"></div>
+      </div>
+      <div id="thanksoval2" class="oval2-parent">
+        <div class="oval2" data-depth="4"></div>
+      </div>
+      <div id="thanksoval3" class="oval3-parent">
+        <div class="oval3" data-depth="3"></div>
+      </div>
+      <div id="thanksoval4" class="oval4-parent">
+        <div class="oval4" data-depth="5"></div>
+      </div>
+    </div>
+    <div class="section-2" id="section-2">
+      <img src="less.png" class="less-hastle">
+      <div class="content">
+        From proposal to payment: A proactive app to give you more time to do what you love
+      </div>
+      <div>
+        <input type="textbox" id="email" class="txtbox" placeholder="Your email address for an early invite"
+          onkeypress="keyPerss(event)">
+      </div>
+      <div>
+        <button class="btn-invite" onClick="save()">
+          RECEIVE INVITE
+          <div class="spinner" id="spinner"></div>
+        </button>
+      </div>
+      <div id="notValid">
+        Email Id Not Valid
+      </div>
+      <div id="error">
+        Something went wrong, Please try again later.
+      </div>
+    </div>
+    <div class="footer-logo" id="footer">
+      d.
+    </div>
+    <script type="text/javascript" src="Typewriter.js"></script>
+    <script>
+      function pageLoaded() {
+        document.querySelector('.loading').classList.add('hide');
+      }
+      var demo = document.getElementById('demo');
+      var typewriter = new Typewriter(demo, {
+        strings: ['Paperwork', 'Tracking expenses', 'Writing invoices', 'Admin work', 'getting paid late'],
+        delay: 'natural',
+        loop: true,
+        autoStart: true,
+      });
+      typewriter.start()
+    </script>
+    <script type="text/javascript" src="parallax.min.js"></script>
+    <script>
+      new Parallax(document.getElementById('background'));
+      new Parallax(document.getElementById('logo'));
+      new Parallax(document.getElementById('oval1'));
+      new Parallax(document.getElementById('oval2'));
+      new Parallax(document.getElementById('oval3'));
+      new Parallax(document.getElementById('oval4'));
+
+      new Parallax(document.getElementById('thanksbackground'));
+      new Parallax(document.getElementById('logo-thanks'));
+      new Parallax(document.getElementById('thanksoval1'));
+      new Parallax(document.getElementById('thanksoval2'));
+      new Parallax(document.getElementById('thanksoval3'));
+      new Parallax(document.getElementById('thanksoval4'));
+    </script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDReI8odN5Cff3uW_NMyAMjInyEQqDT5eo",
+        authDomain: "dustbin-work-6673c.firebaseapp.com",
+        databaseURL: "https://dustbin-work-6673c.firebaseio.com",
+        projectId: "dustbin-work-6673c",
+        storageBucket: "",
+        messagingSenderId: "284870385360",
+        appId: "1:284870385360:web:b399d6db6dcbdabb"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script>
+      function keyPerss(event) {
+        var x = event.which || event.keyCode;
+        if (x == 13) {
+          save();
+        }
+      }
+      function save() {
+        email = document.getElementById('email').value;
+        if (validateEmail(email)) {
+          writeUserData(email);
+        }
+      }
+      function validateEmail(emailField) {
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        if (reg.test(emailField) == false || emailField == '') {
+          document.getElementById('notValid').style.display = 'block';
+          console.log("false");
+          return false;
+        }
+        document.getElementById('notValid').style.display = 'none';
+        console.log("true;");
+        return true;
+      }
+
+      var database = firebase.database();
+      function writeUserData(email) {
+        console.log("email", email);
+        document.getElementById('spinner').style.display = 'block';
+        firebase.database().ref('inviteUser').push({
+          email: email
+        }, function (error) {
+          if (error) {
+            document.getElementById('error').style.display = 'block';
+            document.getElementById('spinner').style.display = 'none';
+          } else {
+            console.log("submitted");
+            document.getElementById('error').style.display = 'none';
+            document.getElementById('thanks').style.display = 'block';
+            document.getElementById('footer').style.display = 'none';
+            document.getElementById('spinner').style.display = 'none';
+            scrollTo(0, 0)
+            setTimeout(() => {
+              document.getElementById('section-1').style.display = 'none';
+              document.getElementById('section-2').style.display = 'none';
+              document.getElementById('thanks').classList.add('thanks-animate');
+            }, 500);
+          }
+        })
+      }
+
+    </script>
+  </div>
+</body>
+
+</html>
