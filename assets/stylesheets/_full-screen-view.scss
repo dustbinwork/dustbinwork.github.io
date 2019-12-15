@@ -202,41 +202,12 @@
 .loader-container.fixed {
   position: fixed;
 }
-.loader {
-  border: 3px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 3px solid rgba(255, 255, 255, 0.3);
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: 25%;
-  right: 10%;
-  -webkit-animation: spin 2s linear infinite; /* Safari */
-  animation: spin 2s linear infinite;
-}
+
 .btn.disabled {
   pointer-events: none;
 
   span {
     pointer-events: none;
-  }
-}
-/* Safari */
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
 

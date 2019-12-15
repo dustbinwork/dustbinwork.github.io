@@ -89,11 +89,12 @@
 .txt-with-icon{
   right: 3px;
   position: absolute;
-  bottom: 1px;
+  top: 33px;
 }
 .disabled{
   cursor: no-drop;
   opacity: .5;
+  pointer-events: none;
 }
 
 /******* Validation Classes ***********/
